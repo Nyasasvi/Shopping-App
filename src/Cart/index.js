@@ -8,10 +8,11 @@ import { RemoveFromCart } from "./client";
 import { Link } from "react-router-dom";
 import "./index.css";
 import NavBar from "../Navbar";
+import { useAuth } from "../Home/AuthContext";
 function Cart() {
   const dispatch = useDispatch();
   const [products, setProducts] = useState(null);
-  const currentUser = { name: "John Doe", id: 1, isActive: true };
+  const { user } = useAuth();
   const { cart } = useSelector((state) => state.cartReducer);
   console.log("cart", cart);
 
@@ -32,6 +33,7 @@ function Cart() {
     fetch(`https://cs5610-final-56af3c7859e7.herokuapp.com/products/`)
       .then((response) => response.json())
       .then((data) => setProducts(data));
+
   }, []);
 
   return (
@@ -47,7 +49,7 @@ function Cart() {
         cart &&
         products &&
         cart.map((item) => {
-          if (item.user_id == currentUser.id) {
+          if (item.user_id == user.id) {
             const product = products.find((product) => product.id === item.product_id);
             console.log("product", product);
             return (
