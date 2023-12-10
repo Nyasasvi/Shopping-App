@@ -3,6 +3,7 @@ import "./index.css";
 import { useAuth } from "../Home/AuthContext";
 import { BsTrash3Fill } from "react-icons/bs";
 import { getAllUsers, deleteUser } from "../ProductDetails/Comments/client";
+import NavBar from "../Navbar";
 const Admin = () => {
   const [users, setUsers] = useState([]);
   const { user } = useAuth();
@@ -29,6 +30,8 @@ const Admin = () => {
   }, []);
 
   return (
+    <>
+    <NavBar/>
     <div className="col-md-10 m-5">
       <h1>Admin Page</h1>
       {users && users.length > 0 && user.role === 3 && (
@@ -90,6 +93,7 @@ const Admin = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

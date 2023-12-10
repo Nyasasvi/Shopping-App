@@ -3,6 +3,7 @@ import "./index.css";
 import { useAuth } from "../Home/AuthContext";
 import { BsTrash3Fill } from "react-icons/bs";
 import { deleteProduct } from "./client";
+import NavBar from "../Navbar";
 const Seller = () => {
   const [products, setProducts] = useState([]);
   const { user } = useAuth();
@@ -26,6 +27,7 @@ const Seller = () => {
   }, []);
 
   return (
+    <><NavBar/>
     <div className="col-md-10 m-5">
       <h1>Product List Page</h1>
       {products && products.length > 0 && user.role === 2 && (
@@ -60,6 +62,7 @@ const Seller = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
