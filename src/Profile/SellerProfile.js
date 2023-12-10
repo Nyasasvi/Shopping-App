@@ -77,11 +77,11 @@ export default function SellerProfile() {
                         <MDBCardText className="mb-1 h5">{followersCount}</MDBCardText>
                         <MDBCardText className="small text-muted mb-0">Following</MDBCardText>
                   </div>}
-                  <div style={{marginLeft:40}}>
+                  {user.role === 1 && <div style={{marginLeft:40}}>
                       <button type="button" class="btn btn-primary" onClick={followSeller} style={{ height: '36px', overflow: 'visible', margin: 10 }}>
                         {isUserFollowing? "Unfollow" :"Follow"}
                       </button>
-                  </div>
+                  </div>}
                   </div>}
                 </div>
                 { seller.description!=null && 

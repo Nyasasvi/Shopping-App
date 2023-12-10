@@ -43,7 +43,8 @@ function NavBar({handleSearchChange}) {
         <div style={{marginRight:50}}>
           <NavDropdown title={profileTitle} id="navbarScrollingDropdown">
             {user? (<>
-            {user.role !== 3 && <NavDropdown.Item><Link to={`/profile/${user.id}`}>Profile</Link></NavDropdown.Item>}
+            {user.role === 1 && <NavDropdown.Item><Link to={`/profile/${user.id}`}>Profile</Link></NavDropdown.Item>}
+            {user.role === 2 && <NavDropdown.Item><Link to={`/sellerProfile/${user.id}`}>Profile</Link></NavDropdown.Item>}
             {user.role === 3 && <NavDropdown.Item><Link to={`/admin`}>Admin Page</Link></NavDropdown.Item>}
             {user.role === 2 && <NavDropdown.Item><Link to={`/seller`}>Products page</Link></NavDropdown.Item>}
             <NavDropdown.Item>
