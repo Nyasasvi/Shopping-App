@@ -55,12 +55,12 @@ function BuyerProfile() {
       })
     }
   }, [user])
-  console.log("Current uswer",currentUser)
   return (
     <><NavBar/>
     <section>
       <MDBContainer className="py-5">
         {error && <h3 style={{ color: "red" }}>Cannot load profile page!!</h3>}
+        {user === null &&  <h3 style={{ color: "red" }}>Please Login to view this page !!  <Link to="/login">Sign up/Login</Link></h3>}
         {user &&
           <MDBRow>
             <MDBCol lg="4">
@@ -72,7 +72,6 @@ function BuyerProfile() {
                     className="rounded-circle"
                     style={{ width: '150px' }}
                     fluid />
-                  {currentUser === null &&  <h3 style={{ color: "red" }}>Please Login to view this page !!</h3>}
                   {currentUser!==null && followingCount !== null && <div><p className="text-muted mb-1">{currentUser.username}</p>
                     <div className="d-flex mb-2" style={{ margin: 16 }}>
                       <MDBCardBody className="p-0">
