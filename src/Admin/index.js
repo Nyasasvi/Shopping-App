@@ -4,6 +4,7 @@ import { useAuth } from "../Home/AuthContext";
 import { BsTrash3Fill } from "react-icons/bs";
 import { getAllUsers, deleteUser } from "../ProductDetails/Comments/client";
 import NavBar from "../Navbar";
+import { Link } from "react-router-dom";
 const Admin = () => {
   const [users, setUsers] = useState([]);
   const { user } = useAuth();
