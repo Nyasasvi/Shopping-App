@@ -72,7 +72,7 @@ function BuyerProfile() {
                     className="rounded-circle"
                     style={{ width: '150px' }}
                     fluid />
-                  
+                  {currentUser === null &&  <h3 style={{ color: "red" }}>Please Login to view this page !!</h3>}
                   {currentUser!==null && followingCount !== null && <div><p className="text-muted mb-1">{currentUser.username}</p>
                     <div className="d-flex mb-2" style={{ margin: 16 }}>
                       <MDBCardBody className="p-0">
