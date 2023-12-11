@@ -52,7 +52,7 @@ const Admin = () => {
                   <tr key={user.id}>
                     <td>{user.id}</td>
                     <td>
-                      <a href={`/profile/${user.id}`}>{user.username}</a>
+                      <Link to={`/profile/${user.id}`}>{user.username}</Link>
                     </td>
                     <td>
                       <button className="btn btn-danger me-2">
@@ -79,7 +79,7 @@ const Admin = () => {
                   <tr key={user.id}>
                     <td>{user.id}</td>
                     <td>
-                      <a href={`/profile/${user.id}`}>{user.username}</a>
+                      <Link to={`/profile/${user.id}`}>{user.username}</Link>
                     </td>
                     <td>
                       <button className="btn btn-danger me-2">
