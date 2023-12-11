@@ -22,9 +22,10 @@ function Comments() {
       navigate("/login");
       return;
     }
-    createComment(productId, comment, user.id).then((comment) => {
-      dispatch(addComment({ text: comment, likes: 0, user_id: user.id }));
+    createComment(productId, comment, user.id).then((commentText) => {
+      dispatch(addComment({ "comment": commentText.comment, "likes": 0, "user_id": user.id }));
       setComment("");
+
     });
   };
 
@@ -58,7 +59,7 @@ function Comments() {
           Post
         </button>
       </form>
-      {comments.map((comment) => (
+      {comments && comments.map((comment) => (
         <div key={comment.id} className="comment-card">
           <p>
             <strong><Link to={`/profile/${comment.user_id}`}>{getUsernameById(comment.user_id)}</Link></strong>

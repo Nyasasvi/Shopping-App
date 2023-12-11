@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   comment: {},
-  comments: [],
+  comments: [{ "comment": "default comment", "likes": 0, "user": { "name": "John Doe", "id": 1} }],
 };
 
 const commentsSlice = createSlice({

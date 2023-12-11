@@ -33,8 +33,8 @@ function Cart() {
     fetch(`https://cs5610-final-56af3c7859e7.herokuapp.com/products/`)
       .then((response) => response.json())
       .then((data) => setProducts(data));
-
-  }, []);
+    console.log("in here");
+  }, [user]);
 
   return (
     <><NavBar></NavBar>
@@ -51,7 +51,6 @@ function Cart() {
         cart.map((item) => {
           if (item.user_id == user.id) {
             const product = products.find((product) => product.id === item.product_id);
-            console.log("product", product);
             return (
               <Card key={item.product_id} className="mb-4">
                 <Row className="no-gutters">
