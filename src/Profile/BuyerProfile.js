@@ -54,7 +54,7 @@ function BuyerProfile() {
         setError(err)
       })
     }
-  }, [user])
+  }, [userId])
   return (
     <><NavBar/>
     <section>
